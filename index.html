@@ -7,17 +7,29 @@
 </head>
 <body>
 
-<h1 align="center"><span><b><em>ПОРТФОЛІО</em></b></span><br>
-    Цей розділ поки для забави<br> Ми вчимось використовувати те, що вивчили</b></h1>
+<h1 align="center">
+    <span><b><em>ПОРТФОЛІО</em></b></span><br>
+    Цей розділ поки для забави
+    Ми вчимось використовувати те, що вивчили</h1>
+
+<!-- <header>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+    <div id="yellow"></div>
+    <div id="dark"></div>
+</header> -->
 
 <nav>
-    <ol>
-        <li><a href="#link1"><b>HTML</b> мова розмітки</a></li>
-        <li><a href="#link11">Мета та завдання мови <b>НТМL</b></a></li>
-        <li><a href="#link2">Загальні відомості</a></li>
-        <li><a href="#link3">Цей розділ поки для забави</a></li>
-        <li><a href="#link4">Посилання</a></li>
-    </ol>
+    <h3>
+        <ol>
+            <li><a href="#link1"><b>HTML</b> мова розмітки</a></li>
+            <li><a href="#link11">Мета та завдання мови <b>НТМL</b></a></li>
+            <li><a href="#link2">Загальні відомості</a></li>
+            <li><a href="#link3">Цей розділ поки для забави</a></li>
+            <li><a href="#link4">Посилання</a></li>
+        </ol>
+    </h3>
 </nav>
 
 <div id="link1">HTML - мова розмітки</div>
@@ -52,11 +64,12 @@
     </p>
 </h4>
 
-<h3>
-    <ul>
-        <li><strong>Особисті якості</strong></li>
-    </ul>
-</h3>
+
+<ul>
+    <li>Особисті якості</li>
+</ul>
+
+
 <ol>
     <li>Відповідальність</li>
     <li>Пунктуальність</li>
@@ -65,33 +78,33 @@
     <li>Працездатність</li>
     <li>Вміння працювати в команді</li>
 </ol>
-<h3>
-    <ul style="list-style-type:disc">
-        <li><strong>Додаткові навички</strong></li>
-    </ul>
-</h3>
+
+<ul style="list-style-type:disc">
+    <li>Додаткові навички</li>
+</ul>
+
 <ol>
     <li>Англійська мова на початковому рівні</li>
     <li>Проводжу курси по основам верстки веб-сторінок</li>
 </ol>
-
 <div id="link2">Загальні відомості</div>
 <hr align="left">
-<img src="01.01.01.gif" alt="" title="5555" width="254">
-<!-- <img src="01.01.01.gif" alt="Kartinka">-->
-<h4><em>Дані</em> у форматі <strong>HTML</strong> нагадують звичайні
-    текстові файли за винятком того, що деякі символи в них (так звані теги <q>(tag)</q>) інтерпретуються
-    як <q>розмітка</q>.
-    <em>Розмітка</em>
-    надає документу деяку, визначену тегами, структуру:
-    <em>параграфи, розділи, абзаци,
-        списки, малюнки, таблиці, колонтитули, індекси, зміст тощо.
-    </em>
-</h4>
-<h4>Всередині кожного блоку можна змінювати
-    <em>шрифт, розмір символів, колір тексту, виділяти текст
-        курсивом та/або робити його напівжирним.
-    </em></h4>
+<img src="01.01.01.gif" alt="kartinka" title="5555" width="254">
+<article align="center">
+    <h4>
+        <em>Дані</em> у форматі <strong>HTML</strong> нагадують звичайні
+        текстові файли за винятком того, що деякі символи в них (так звані теги <q>(tag)</q>) інтерпретуються
+        як <q>розмітка</q>.
+        <em>Розмітка</em>
+        надає документу деяку, визначену тегами, структуру:
+        <em>параграфи, розділи, абзаци,
+            списки, малюнки, таблиці, колонтитули, індекси, зміст тощо.
+        </em>
+    </h4>
+    <h4>Всередині кожного блоку можна змінювати
+        <em>шрифт, розмір символів, колір тексту, виділяти текст
+            курсивом та/або робити його напівжирним.
+        </em></h4></article>
 
 <p class="clear">&nbsp&nbsp&nbsp&nbsp Головною особливістю <strong>HTML</strong> є спроможність
     використовувати гіперзв'язки <q>(links)</q>, завдяки яким можливі посилання та переходи з поточно
@@ -139,19 +152,20 @@
 
 <div id="link4">Посилання</div>
 <hr align="left">
+<h2><b>Форми</b></h2>
 <footer>
     <form target=“_blank” action="handler.php">
-        <b>Форми</b>
         <aside>
             <input placeholder="Ваше имя" name="user">
             <button formaction="handler.php">Отправить</button>
         </aside>
+
+        <fieldset>
+            <legend>Дані користувача</legend>
+            <input type="text" name="t"/> <br>
+            <input type="password" name="p"><br>
+        </fieldset>
     </form>
-    <fieldset>
-        <!-- <legend>Дані користувача</legend> -->
-        <input type="text" name="t"/> <br>
-        <input type="password" name="p"><br>
-    </fieldset>
     <!-- <form action="">
     <input type="date">
     <input type="number" min="-5" max="10" value="5"> <br>
