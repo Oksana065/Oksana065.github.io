@@ -2,96 +2,61 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Мій перший сайт</title>
-    <style>
-        body {
-            height: 3000px;
-        }
-
-        h1 {
-            border-bottom: solid;
-            border-top: solid;
-            color: brown;
-
-        }
-
-        #link1, #link2, #link3, #link4 {
-            margin-top: 10px;
-            font-size: 35px;
-            font-style: oblique;
-        }
-
-        #link1:target, #link2:target, #link3:target, #link4:target {
-            background: #FFccFf;
-            padding: 3px;
-        }
-
-        nav {
-            margin-left: 25px;
-        }
-
-        img {
-            float: left;
-            margin-right: 25px;
-            padding: 20px;
-        }
-
-        a {
-            font-style: normal;
-            margin: 5px;
-
-        }
-
-        a:hover {
-            font-size: 150%;
-            margin-left: 15px;
-            color: #0000ff;
-        }
-
-        q {
-            font-family: Times, serif; /* Шрифт с засечками */
-            font-style: italic; /* Курсивное начертание текста */
-            color: #008;
-        }
-
-        p.clear {
-            clear: both;
-        }
-    </style>
 </head>
 <body>
-<h1 align="center"><b><em>ПОРТФОЛІО</em><br>
+
+<h1 align="center"><span><b><em>ПОРТФОЛІО</em></b></span><br>
     Цей розділ поки для забави<br> Ми вчимось використовувати те, що вивчили</b></h1>
 
 <nav>
-    <a href="#link1">HTML - мова розмітки</a><br>
-    <a href="#link2">Загальні відомості</a><br>
-    <a href="#link3">Цей розділ поки для забави</a><br>
-    <a href="#link4">Посилання</a>
+    <ol>
+        <li><a href="#link1"><b>HTML</b> мова розмітки</a></li>
+        <li><a href="#link11">Мета та завдання мови <b>НТМL</b></a></li>
+        <li><a href="#link2">Загальні відомості</a></li>
+        <li><a href="#link3">Цей розділ поки для забави</a></li>
+        <li><a href="#link4">Посилання</a></li>
+    </ol>
 </nav>
 
 <div id="link1">HTML - мова розмітки</div>
+<hr align="left">
 
+<p>&nbsp&nbsp<em>HTML</em> <strong>(англ. HyperText Markup Language)</strong> —
+    <i>Мова розмітки гіпертекстових документів)</i>
+    —основана на <q>SGML</q> текстова мова розмітки, призначена для <em>маркування</em> документів,
+    що містять текст, зображення, гіперпосилання, тощо. <strong>HTML-документи</strong> лежать в основі Веб,
+    і відображаються із допомогою <q>веб-браузерів.</q> Разом із видимою
+    інформацією,<strong>HTML-документи</strong> містять додаткові метадані, такі як, наприклад, мова тексту,
+    автор документа,стислий підсумок.
+</p>
 
+</h4>
+<h4><p>&nbsp&nbsp<strong>HTML</strong> разом із каскадними таблицями стилів та вбудованими скриптами —
+    це три <em>основні технології побудови веб-сторінок.</em><br>
+    <strong>Документ HTML</strong> оброблюється браузером та відтворюється на екрані у звичному для людини
+    вигляді.
+
+</p>
+</h4>
+
+<div id="link11">Мета та завдання мови НТМL</div>
+<hr align="left">
 <h4>
-    <p><em>HTML</em> <strong>(англ. HyperText Markup Language)</strong> —
-        <em>Мова розмітки гіпертекстових документів)</em>
-        —основана на <q>SGML</q> текстова мова розмітки, призначена для <em>маркування</em> документів,
-        що містять текст, зображення, гіперпосилання, тощо. <strong>HTML-документи</strong> лежать в основі Веб,
-        і відображаються із допомогою <q>веб-браузерів.</q> Разом із видимою
-        інформацією,<strong>HTML-документи</strong>
-        містять додаткові метадані, такі як, наприклад, мова тексту, автор документа,стислий підсумок.
+    <p>
+        <strong>Мета</strong> - стати володарем однієї з найбільш запитуваних професій світу,
+        створювати рекламу майбутнього.<br>
+        <strong>Завдання</strong> - навчитись створювати <em>Web-документи, форматувати текст, що вміщений до них,
+        створювати гіперпосилання та поміщати до них графіку.</em>
     </p>
 </h4>
 
-<h4><p><strong>Документ HTML</strong> оброблюється браузером та відтворюється на екрані у звичному для людини
-    вигляді.
-</p></h4>
-
-
-<ul style="list-style-type:disc">
-    <li>Особисті якості</li>
-</ul>
+<h3>
+    <ul>
+        <li><strong>Особисті якості</strong></li>
+    </ul>
+</h3>
 <ol>
     <li>Відповідальність</li>
     <li>Пунктуальність</li>
@@ -100,19 +65,20 @@
     <li>Працездатність</li>
     <li>Вміння працювати в команді</li>
 </ol>
-<ul style="list-style-type:disc">
-    <li>Додаткові навички</li>
-</ul>
+<h3>
+    <ul style="list-style-type:disc">
+        <li><strong>Додаткові навички</strong></li>
+    </ul>
+</h3>
 <ol>
     <li>Англійська мова на початковому рівні</li>
     <li>Проводжу курси по основам верстки веб-сторінок</li>
 </ol>
 
-
 <div id="link2">Загальні відомості</div>
-
-<img src="01.01.01.gif" width="300" height="180"/>
-
+<hr align="left">
+<img src="01.01.01.gif" alt="" title="5555" width="254">
+<!-- <img src="01.01.01.gif" alt="Kartinka">-->
 <h4><em>Дані</em> у форматі <strong>HTML</strong> нагадують звичайні
     текстові файли за винятком того, що деякі символи в них (так звані теги <q>(tag)</q>) інтерпретуються
     як <q>розмітка</q>.
@@ -127,7 +93,7 @@
         курсивом та/або робити його напівжирним.
     </em></h4>
 
-<p class="clear"> Головною особливістю <strong>HTML</strong> є спроможність
+<p class="clear">&nbsp&nbsp&nbsp&nbsp Головною особливістю <strong>HTML</strong> є спроможність
     використовувати гіперзв'язки <q>(links)</q>, завдяки яким можливі посилання та переходи з поточно
     веб-сторінки на інші документи, як <q>локальні</q> (документи поточного сервера), так і такі,
     що знаходяться на серверах в найвіддаленіших регіонах земної кулі. <strong>Мова HTML</strong>,
@@ -136,7 +102,11 @@
     (таких програм як Internet Explorer,Firefox‎,Opera,Google Chrome,Safari( та ін.).
 </p>
 
-<div id="link3"><sub>Pозділ для забави</sub></div>
+<div id="link3"><strong>Pозділ для забави</strong></div>
+<hr align="left">
+
+
+<!--<caption> Table</caption> -->
 <table border="2" cellpadding="7" cellspacing="0" width="940px">
     <thead width="50px" bgcolor="#D3EDF6">
     <tr>
@@ -168,15 +138,31 @@
 </table>
 
 <div id="link4">Посилання</div>
-<div>
+<hr align="left">
+<footer>
     <form target=“_blank” action="handler.php">
         <b>Форми</b>
         <aside>
             <input placeholder="Ваше имя" name="user">
-            <button formaction="handler.php">Отправить</button> </aside></aside>
-        <!-- <input type=“text” size="35px"/>
-         <input type="submit" size="35" value="Отправить"> -->
+            <button formaction="handler.php">Отправить</button>
+        </aside>
     </form>
-</div>
+    <fieldset>
+        <!-- <legend>Дані користувача</legend> -->
+        <input type="text" name="t"/> <br>
+        <input type="password" name="p"><br>
+    </fieldset>
+    <!-- <form action="">
+    <input type="date">
+    <input type="number" min="-5" max="10" value="5"> <br>
+     <input type="radio" name="r" value="m"> HTML
+     <input type="radio" name="r" value="w"> CSS
+
+<!--   <input disabled type="submit" value="Послать">
+     <input type="reset" value="Очистить">
+             </form>-->
+    <!--<textarea rows="4" cols="30"> HTML </textarea> -->
+
+</footer>
 </body>
 </html>
