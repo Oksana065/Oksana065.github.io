@@ -1,0 +1,164 @@
+﻿body {
+    height: 3000px;
+}
+
+h1 {
+    border: 15px solid green;
+    border-radius: 50px/15px;
+    margin-bottom: 5px;
+    background: bisque;
+    padding: 15px;
+}
+
+span {
+    border: 1px solid black;
+    background: yellow;
+}
+
+div {
+    border-bottom: 50px;
+    border: 1px solid fuchsia;
+    background: #4ec5ff;
+    width: 300px;
+}
+
+h3 {
+    width: 300px;
+    border: 3px dotted #801c0c;
+    border-radius: 25px;
+}
+
+p:first-letter {
+    font-style: italic;
+    color: #1a7b0e;
+}
+
+p {
+    padding: 25px;
+    border: 3px solid red;
+    border-radius: 20px;
+}
+
+p:first-line {
+    color: #123fff
+}
+
+hr {
+    color: #000088;
+    width: 30%;
+}
+
+#red, #green, #blue, #yellow, #dark {
+    width: 60px;
+    height: 60px;
+}
+
+#red {
+    background: red; width: 80px; float: left;
+}
+
+#green {
+    background: green; width: 100px;
+}
+
+#blue {
+    background: blue;width: 120px; float: left;
+}
+
+#yellow {
+    background: yellow;clear;
+    width: 130px;
+}
+
+#dark {
+    background: dimgray;width: 150px;
+}
+
+#link1, #link11, #link2, #link3, #link4 {
+    margin-top: 30px;
+    font-size: 35px;
+    font-style: oblique;
+}
+header {background: gold; float: left}
+
+#link1:target, #link11:target, #link2:target, #link3:target, #link4:target {
+    background: #fffd29;
+    width: 480px;
+    padding: 3px;
+}
+
+ol {
+    list-style-type: none;
+}
+
+section {
+    border: 1px solid greenyellow;
+    height: 150px;
+    /*overflow: visible;*/
+    overflow: hidden;
+}
+
+tr:nth-child(2n) {
+    background: gold;
+}
+
+aside {
+    background: #f0f0f0;
+    padding: 10px;
+    width: 200px;
+    float: right;
+}
+
+nav {
+    margin-left: 5px;
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    height: 230px;
+    overflow: scroll;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+img {
+    float: left;
+    margin-right: 25px;
+    padding: 20px;
+}
+
+a {
+    font-style: normal;
+    margin: 5px;
+}
+
+a:hover {
+    font-size: 150%;
+    margin-left: 15px;
+    color: #ff4400;
+}
+
+q {
+    font-family: Times, serif;
+    font-style: italic;
+    color: #198879;
+}
+
+p.clear {
+    clear: both;
+}
+
+article {
+    border-right-style: solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 350px;
+    border: 3px solid #ff2f25;
+    border-bottom: 1px seashell;
+}
+
+
+
+
+
