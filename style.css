@@ -6,15 +6,68 @@
     background-image:url(patern.png);
     background-repeat:repeat;
     background-attachment:fixed;
-    opacity: 1;
 
+}
+#title{
+    margin-top: -28px;
+    margin-left: 30px;
+    width: 180px;
+    position: absolute;
+    text-align: center;
+    border: 2px dashed red;
+    border-radius: 30px;
+    background-color: transparent;
+}
+#n0{
+    position: absolute;
+    margin-left: 900px;
+    margin-top: 80px;
+    width: 256px;
+    height: 30px;
+    border: none;
+}
+#n1,#n2,#n3,#n4,#n5,#n6,#n7,#n8{
+    width: 30px;
+    height: 30px;
+    border: 1px dashed #000000;
+    float: left;
+}
+#n1:hover,#n2:hover,#n3:hover,#n4:hover,#n5:hover,#n6:hover,#n7:hover,#n8:hover{
+    width: 30px;
+    height: 60px;
+    border: 1px solid #ff2000;
+    float: left;
+}
+
+#n1{
+    background-color: azure;
+}
+#n2{
+    background-color: moccasin;
+}
+#n3{
+    background-color: coral;
+}
+#n4{
+    background-color: darkorange;
+}
+#n5{
+    background-color: mediumaquamarine;
+}
+#n6{
+    background-color: wheat;
+}
+#n7{
+    background-color: lawngreen;
+}
+#n8{
+    background-color: olivedrab;
 }
 
 h1 {
     border: 15px solid green;
-    border-radius: 50px/15px;
+    border-radius: 50px/35px;
     margin-bottom: 5px;
-    background: bisque;
     font-style: oblique;
     font-size: 50px;
     padding: 15px;
@@ -26,7 +79,7 @@ span {
 }
 
 div {
-    border: 1px solid fuchsia;
+    border: 1px solid #000000;
     background: #4ec5ff;
     width: 300px;
 }
@@ -55,43 +108,58 @@ hr {
     width: 30%;
 }
 
-#red, #green, #blue, #yellow, #maroon, #dark {
-    width: 60px;
-    height: 60px;
+.red, .green, .blue, .yellow, .maroon, .dark, .white, .darkturquoise, .orange,.pink {
+    width: 63px;
+    height: 10px;
+    border-radius: 6px;
+}
+.white {
+    background: white;
+    float: left;
 }
 
-#red {
+.red {
     background: red;
     float: left;
 }
 
-#green {
+.green {
     background: green;
     float: left;
 }
 
-#blue {
+.blue {
     background: blue;
     float: left;
 
 }
 
-#yellow {
+.yellow {
     background: yellow;
-    clear: left;
     float: left;
 }
 
-#maroon {
+.maroon {
     background: maroon;
     float: left;
 }
 
-#dark {
-    background: dimgray;
-    clear: left;
+.dark {
+     background: dimgray;
+     float: left;
+ }
+.darkturquoise {
+    background: darkturquoise;
+    float: left;
 }
-
+.orange {
+    background: orange;
+    float: left;
+}
+.pink {
+     background: pink;
+     float: left;
+ }
 section {
     background: gold;
     float: right;
@@ -110,6 +178,7 @@ header {
 
 #link1:target, #link11:target, #link2:target, #link3:target, #link4:target {
     background: #fffd29;
+    color: #24211E;
     width: 480px;
     padding: 3px;
 }
@@ -122,6 +191,7 @@ ol {
 ul {
     list-style-type: disc;
     font-size: 25px;
+
 }
 
 aside {
@@ -137,11 +207,15 @@ nav {
     width: 300px;
     border-radius: 15px;
     margin-bottom: 20px;
+
    }
 nav div{
-    padding: 2px;
-    border-radius: 40px;
+    padding: 3px;
+    border-radius: 50px;
     text-align: center;
+    background:-webkit-linear-gradient(top,cornflowerblue,white);
+    background:-moz-linear-gradient(top,cornflowerblue,white);
+    background:-o-linear-gradient(top,cornflowerblue,white);
 
 }
 footer {
@@ -162,7 +236,7 @@ a {
 }
 
 a:hover {
-    margin-left: 15px;
+    margin-left: 20px;
     }
 
 q {
@@ -178,20 +252,19 @@ p.clear {
 article {
     border-radius: 5px;
     padding: 2px;
-    border: 3px solid #ff2f25;
+    border: 1px solid #ff2f25;
 }
-
+fieldset{
+    width: 210px;
+}
 
 article ol {
-    height: 170px;
+    height: 150px;
 }
 
-
-
-
-
-
-
+p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1{
+    background: bisque;
+}
 
 
 
