@@ -4,32 +4,218 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Мій перший сайт</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").hide();
+            $("#hide1").hide();
+            $("#2").hide();
+            $("#1").hide();
+
+            $("#show").click(function () {
+                $("#1").show("fast");
+                $("#show").hide();
+                $("#hide").show();
+            });
+            $("#show1").click(function () {
+                $("#2").show("fast");
+                $("#show1").hide();
+                $("#hide1").show();
+            });
+
+            $("#hide").click(function () {
+                $("#1").hide("fast");
+                $("#hide").hide();
+                $("#show").show();
+            });
+            $("#hide1").click(function () {
+                $("#2").hide("fast");
+                $("#hide1").hide();
+                $("#show1").show();
+            });
+            //color_change
+            $("#n1").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "azure");
+            });
+            $("#n2").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "moccasin");
+            });
+            $("#n3").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "coral");
+            });
+            $("#n4").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "darkorange");
+            });
+            $("#n5").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "mediumaquamarine");
+            });
+            $("#n6").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "wheat");
+            });
+            $("#n7").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "lawngreen");
+            });
+            $("#n8").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "olivedrab");
+            });
+        });
+
+    </script>
 </head>
 <body>
-
+<div id="n0">
+    <div id="title">Вибери свій стиль !</div>
+    <div id="n1"></div>
+    <div id="n2"></div>
+    <div id="n3"></div>
+    <div id="n4"></div>
+    <div id="n5"></div>
+    <div id="n6"></div>
+    <div id="n7"></div>
+    <div id="n8"></div>
+</div>
 <h1 align="center">
     <span><b><em>ПОРТФОЛІО</em></b></span><br>
-    Цей розділ поки для забави
+    Цей розділ поки для забави<br>
     Ми вчимось використовувати те, що вивчили</h1>
 
-<!-- <header>
-    <div id="red"></div>
-    <div id="green"></div>
-    <div id="blue"></div>
-    <div id="yellow"></div>
-    <div id="dark"></div>
-</header> -->
+
+<!--Годинник-->
+<canvas id="canvas" width="200" height="200" style="background-color:#133;  position: fixed; margin-top: 350px;
+margin-left: 1000px; border-radius: 150px">
+</canvas>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.97
+    setInterval(drawClock, 1000);
+
+    function drawClock() {
+        drawFace(ctx, radius);
+        drawNumbers(ctx, radius);
+        drawTime(ctx, radius);
+    }
+
+    function drawFace(ctx, radius) {
+        var grad;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'navajowhite';
+        ctx.fill();
+        grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+        grad.addColorStop(0, '#333');
+        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(1, '#f23');
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = radius * 0.1;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+        ctx.fillStyle = '#135';
+        ctx.fill();
+    }
+
+    function drawNumbers(ctx, radius) {
+        var ang;
+        var num;
+        ctx.font = radius * 0.15 + "px arial";
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        for (num = 1; num < 13; num++) {
+            ang = num * Math.PI / 6;
+            ctx.rotate(ang);
+            ctx.translate(0, -radius * 0.85);
+            ctx.rotate(-ang);
+            ctx.fillText(num.toString(), 0, 0);
+            ctx.rotate(ang);
+            ctx.translate(0, radius * 0.85);
+            ctx.rotate(-ang);
+        }
+    }
+
+    function drawTime(ctx, radius) {
+        var now = new Date();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        //hour
+        hour = hour % 12;
+        hour = (hour * Math.PI / 6) +
+        (minute * Math.PI / (6 * 60)) +
+        (second * Math.PI / (360 * 60));
+        drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+        //minute
+        minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+        drawHand(ctx, minute, radius * 0.8, radius * 0.07);
+        // second
+        second = (second * Math.PI / 30);
+        drawHand(ctx, second, radius * 0.9, radius * 0.02);
+    }
+
+    function drawHand(ctx, pos, length, width) {
+        ctx.beginPath();
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.moveTo(0, 0);
+        ctx.rotate(pos);
+        ctx.lineTo(0, -length);
+        ctx.stroke();
+        ctx.rotate(-pos);
+    }
+</script>
+<!--Годинник-->
+
+
+<article style="width:330px; float: left; margin-left: 170px;">
+    <ul>
+        <li>Особисті якості
+            <button id="hide">сховати</button>
+            <button id="show">показати</button>
+        </li>
+    </ul>
+
+    <ol id="1">
+        <li>Відповідальність</li>
+        <li>Пунктуальність</li>
+        <li>Наполегливість</li>
+        <li>Креативний підхід до завдань</li>
+        <li>Працездатність</li>
+        <li>Вміння працювати в команді</li>
+    </ol>
+
+</article>
+<article style="width:360px; margin-left:700px;">
+    <ul>
+        <li>Додаткові навички
+            <button id="hide1">сховати</button>
+            <button id="show1">показати</button>
+        </li>
+    </ul>
+    <ol id="2">
+        <li>Англійська мова на початковому рівні</li>
+        <li>Проводжу курси по основам верстки веб-сторінок</li>
+    </ol>
+</article>
 
 <nav>
-    <h3>
-        <ol>
-            <li><a href="#link1"><b>HTML</b> мова розмітки</a></li>
-            <li><a href="#link11">Мета та завдання мови <b>НТМL</b></a></li>
-            <li><a href="#link2">Загальні відомості</a></li>
-            <li><a href="#link3">Цей розділ поки для забави</a></li>
-            <li><a href="#link4">Посилання</a></li>
-        </ol>
-    </h3>
+    <a href="#link1">
+        <div><b>HTML</b> мова розмітки</div>
+    </a>
+    <a href="#link11">
+        <div>Мета та завдання мови <b>НТМL</b></div>
+    </a>
+    <a href="#link2">
+        <div>Загальні відомості</div>
+    </a>
+    <a href="#link3">
+        <div>Цей розділ поки для забави</div>
+    </a>
+    <a href="#link4">
+        <div>Посилання</div>
+    </a>
 </nav>
 
 <div id="link1">HTML - мова розмітки</div>
@@ -44,54 +230,31 @@
     автор документа,стислий підсумок.
 </p>
 
-</h4>
-<h4><p>&nbsp&nbsp<strong>HTML</strong> разом із каскадними таблицями стилів та вбудованими скриптами —
+
+<p>&nbsp&nbsp<strong>HTML</strong> разом із каскадними таблицями стилів та вбудованими скриптами —
     це три <em>основні технології побудови веб-сторінок.</em><br>
     <strong>Документ HTML</strong> оброблюється браузером та відтворюється на екрані у звичному для людини
     вигляді.
 
 </p>
-</h4>
+
 
 <div id="link11">Мета та завдання мови НТМL</div>
 <hr align="left">
-<h4>
-    <p>
-        <strong>Мета</strong> - стати володарем однієї з найбільш запитуваних професій світу,
-        створювати рекламу майбутнього.<br>
-        <strong>Завдання</strong> - навчитись створювати <em>Web-документи, форматувати текст, що вміщений до них,
-        створювати гіперпосилання та поміщати до них графіку.</em>
-    </p>
-</h4>
+
+<p>
+    <strong>Мета</strong> - стати володарем однієї з найбільш запитуваних професій світу,
+    створювати рекламу майбутнього.<br>
+    <strong>Завдання</strong> - навчитись створювати <em>Web-документи, форматувати текст, що вміщений до них,
+    створювати гіперпосилання та поміщати до них графіку.</em>
+</p>
 
 
-<ul>
-    <li>Особисті якості</li>
-</ul>
-
-
-<ol>
-    <li>Відповідальність</li>
-    <li>Пунктуальність</li>
-    <li>Наполегливість</li>
-    <li>Креативний підхід до завдань</li>
-    <li>Працездатність</li>
-    <li>Вміння працювати в команді</li>
-</ol>
-
-<ul style="list-style-type:disc">
-    <li>Додаткові навички</li>
-</ul>
-
-<ol>
-    <li>Англійська мова на початковому рівні</li>
-    <li>Проводжу курси по основам верстки веб-сторінок</li>
-</ol>
 <div id="link2">Загальні відомості</div>
 <hr align="left">
-<img src="01.01.01.gif" alt="kartinka" title="5555" width="254">
-<article align="center">
-    <h4>
+<img src="01.01.01.gif" alt="kartinka" title="5555" width="350">
+<article>
+    <p>
         <em>Дані</em> у форматі <strong>HTML</strong> нагадують звичайні
         текстові файли за винятком того, що деякі символи в них (так звані теги <q>(tag)</q>) інтерпретуються
         як <q>розмітка</q>.
@@ -100,14 +263,17 @@
         <em>параграфи, розділи, абзаци,
             списки, малюнки, таблиці, колонтитули, індекси, зміст тощо.
         </em>
-    </h4>
-    <h4>Всередині кожного блоку можна змінювати
+    </p>
+
+    <p>Всередині кожного блоку можна змінювати
         <em>шрифт, розмір символів, колір тексту, виділяти текст
             курсивом та/або робити його напівжирним.
-        </em></h4></article>
+        </em>
+    </p>
+</article>
 
 <p class="clear">&nbsp&nbsp&nbsp&nbsp Головною особливістю <strong>HTML</strong> є спроможність
-    використовувати гіперзв'язки <q>(links)</q>, завдяки яким можливі посилання та переходи з поточно
+    використовувати гіперпосилання <q>(links)</q>, завдяки яким можливі посилання та переходи з поточно
     веб-сторінки на інші документи, як <q>локальні</q> (документи поточного сервера), так і такі,
     що знаходяться на серверах в найвіддаленіших регіонах земної кулі. <strong>Мова HTML</strong>,
     також дозволяє вставляти в документи <em>зображення, звук, відео</em> та ін.
@@ -123,28 +289,28 @@
 <table border="2" cellpadding="7" cellspacing="0" width="940px">
     <thead width="50px" bgcolor="#D3EDF6">
     <tr>
-        <td>Rank</td>
-        <td>Country</td>
-        <td>Population</td>
+        <td>Рівень</td>
+        <td>Країна</td>
+        <td>Населення</td>
     </tr>
     </thead>
     <tr>
         <td>1</td>
-        <td>China</td>
+        <td>Китай</td>
         <td>1 333 240 000</td>
     </tr>
     <tr>
         <td>2</td>
-        <td>India</td>
+        <td>Індія</td>
         <td>1 169 560 000</td>
     </tr>
     <tr>
         <td>3</td>
-        <td>United States</td>
+        <td>США</td>
         <td>307 505 000</td>
     </tr>
     <tr>
-        <td>all</td>
+        <td>усі</td>
         <td>world total</td>
         <td>6 787 100 100</td>
     </tr>
@@ -152,31 +318,523 @@
 
 <div id="link4">Посилання</div>
 <hr align="left">
-<h2><b>Форми</b></h2>
-<footer>
+<h2 style="width: 100px;"><b>Форми</b></h2>
+<footer style="margin-bottom: 20px">
     <form target=“_blank” action="handler.php">
-        <aside>
-            <input placeholder="Ваше имя" name="user">
-            <button formaction="handler.php">Отправить</button>
-        </aside>
 
         <fieldset>
             <legend>Дані користувача</legend>
-            <input type="text" name="t"/> <br>
-            <input type="password" name="p"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter email"/> <br>
+
+
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" placeholder="Enter password"><br>
+            <button formaction="handler.php">Відправити</button>
         </fieldset>
     </form>
-    <!-- <form action="">
-    <input type="date">
-    <input type="number" min="-5" max="10" value="5"> <br>
-     <input type="radio" name="r" value="m"> HTML
-     <input type="radio" name="r" value="w"> CSS
-
-<!--   <input disabled type="submit" value="Послать">
-     <input type="reset" value="Очистить">
-             </form>-->
-    <!--<textarea rows="4" cols="30"> HTML </textarea> -->
-
 </footer>
+<div id="color" style="width: auto">
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="yellow"></div>
+    <div class="maroon"></div>
+    <div class="dark"></div>
+    <div class="white"></div>
+    <div class="pink"></div>
+    <div class="orange"></div>
+    <div class="darkturquoise"></div>
+</div>
 </body>
 </html>

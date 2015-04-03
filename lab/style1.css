@@ -1,0 +1,61 @@
+﻿  body {
+   	  color: navy;
+      background: #dddddd;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        	      }
+nav a:link{color: green;
+nav a:visited { color : red }
+
+}
+
+        h1 {
+            border-bottom: solid;
+            border-top: solid;
+            color: brown;
+
+        }
+
+        #link1, #link2, #link3, #link4 {
+            margin-top: 10px;
+            font-size: 35px;
+            font-style: oblique;
+        }
+
+        #link1:target,#link2:target, #link3:target, #link4:target {
+            background: #fffd29;
+            padding: 3px;
+        }
+
+        nav {
+            margin-left: 25px;
+        }
+
+        img {
+            float: left;
+            margin-right: 25px;
+            padding: 20px;
+        }
+
+        ol {list-style-type: sguare;
+        }
+        a {
+            font-style: normal;
+            margin: 5px;
+
+        }
+
+        a:hover {
+            font-size: 150%;
+            margin-left: 15px;
+            color: #ff4400;
+        }
+
+        q {
+            font-family: Times, serif; /* Шрифт с засечками */
+            font-style: italic; /* Курсивное начертание текста */
+            color: #008;
+        }
+
+        p.clear {
+            clear: both;
+        }
