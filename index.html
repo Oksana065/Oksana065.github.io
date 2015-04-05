@@ -4,32 +4,29 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Мій перший сайт</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#hide").hide();
-            $("#hide1").hide();
-            $("#2").hide();
-            $("#1").hide();
-
+            $("#b2").hide();
+            $("#b1").hide();
             $("#show").click(function () {
-                $("#1").show("fast");
+                $("#b1").show("fast");
                 $("#show").hide();
                 $("#hide").show();
             });
             $("#show1").click(function () {
-                $("#2").show("fast");
+                $("#b2").show("fast");
                 $("#show1").hide();
                 $("#hide1").show();
             });
 
-            $("#hide").click(function () {
-                $("#1").hide("fast");
+            $("#hide").hide().click(function () {
+                $("#b1").hide("fast");
                 $("#hide").hide();
                 $("#show").show();
             });
-            $("#hide1").click(function () {
-                $("#2").hide("fast");
+            $("#hide1").hide().click(function () {
+                $("#b2").hide("fast");
                 $("#hide1").hide();
                 $("#show1").show();
             });
@@ -41,22 +38,46 @@
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "moccasin");
             });
             $("#n3").click(function(){
-                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "coral");
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "darkorange ");
             });
             $("#n4").click(function(){
-                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "darkorange");
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "coral ");
             });
             $("#n5").click(function(){
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "mediumaquamarine");
             });
             $("#n6").click(function(){
-                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "wheat");
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "aqua");
             });
             $("#n7").click(function(){
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "lawngreen");
             });
             $("#n8").click(function(){
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "olivedrab");
+            });
+            $("#n9").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "yellow");
+            });
+            $("#n10").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "pink");
+            });
+            $("#n11").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "purple ");
+            });
+            $("#n12").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "deeppink ");
+            });
+            $("#n13").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "mediumpurple");
+            });
+            $("#n14").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "firebrick");
+            });
+            $("#n15").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "navy");
+            });
+            $("#n16").click(function(){
+                $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "dimgray");
             });
         });
 
@@ -65,14 +86,8 @@
 <body>
 <div id="n0">
     <div id="title">Вибери свій стиль !</div>
-    <div id="n1"></div>
-    <div id="n2"></div>
-    <div id="n3"></div>
-    <div id="n4"></div>
-    <div id="n5"></div>
-    <div id="n6"></div>
-    <div id="n7"></div>
-    <div id="n8"></div>
+    <div id="n1"></div>     <div id="n2"></div>     <div id="n3"></div>     <div id="n4"></div>     <div id="n5"></div>     <div id="n6"></div>    <div id="n7"></div>     <div id="n8"></div>
+    <div id="n9"></div>    <div id="n10"></div>    <div id="n11"></div>    <div id="n12"></div>    <div id="n13"></div>    <div id="n14"></div>    <div id="n15"></div>    <div id="n16"></div>
 </div>
 <h1 align="center">
     <span><b><em>ПОРТФОЛІО</em></b></span><br>
@@ -81,8 +96,7 @@
 
 
 <!--Годинник-->
-<canvas id="canvas" width="200" height="200" style="background-color:#133;  position: fixed; margin-top: 350px;
-margin-left: 1000px; border-radius: 150px">
+<canvas id="canvas" width="200" height="200" style=" position: fixed; margin-top: 350px;margin-left: 1000px ">
 </canvas>
 
 <script>
@@ -90,7 +104,7 @@ margin-left: 1000px; border-radius: 150px">
     var ctx = canvas.getContext("2d");
     var radius = canvas.height / 2;
     ctx.translate(radius, radius);
-    radius = radius * 0.97
+    radius = radius * 0.85
     setInterval(drawClock, 1000);
 
     function drawClock() {
@@ -172,12 +186,12 @@ margin-left: 1000px; border-radius: 150px">
 <article style="width:330px; float: left; margin-left: 170px;">
     <ul>
         <li>Особисті якості
-            <button id="hide">сховати</button>
-            <button id="show">показати</button>
+            <div id="hide"></div>
+            <div id="show"></div>
         </li>
     </ul>
 
-    <ol id="1">
+    <ol id="b1">
         <li>Відповідальність</li>
         <li>Пунктуальність</li>
         <li>Наполегливість</li>
@@ -190,11 +204,11 @@ margin-left: 1000px; border-radius: 150px">
 <article style="width:360px; margin-left:700px;">
     <ul>
         <li>Додаткові навички
-            <button id="hide1">сховати</button>
-            <button id="show1">показати</button>
+            <div id="hide1"></div>
+            <div id="show1"></div>
         </li>
     </ul>
-    <ol id="2">
+    <ol id="b2">
         <li>Англійська мова на початковому рівні</li>
         <li>Проводжу курси по основам верстки веб-сторінок</li>
     </ol>
