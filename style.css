@@ -2,7 +2,6 @@
     height: 3000px;
     padding:8px;
     margin:0px;
-
     background-image:url(patern.png);
     background-repeat:repeat;
     background-attachment:fixed;
@@ -11,7 +10,7 @@
 
 #title{
     margin-top: -28px;
-    margin-left: 30px;
+    margin-left: 10px;
     width: 180px;
     position: absolute;
     text-align: center;
@@ -40,35 +39,35 @@
     border: 2px solid #000000;
     margin: 2px;
     float: left;
-}
+    }
 
 #n1{
-    background-color: azure;
+    background-color: azure; position: absolute; left: 10px;top: 10px;
 }
 #n2{
-    background-color: moccasin;
-}
+    background-color: moccasin;left: 20px;top: 20px;
+    position: absolute;}
 #n3{
-    background-color: darkorange ;
-}
+    background-color: darkorange ;left: 30px;top: 30px;
+    position: absolute;}
 #n4{
-    background-color: coral;
-}
+    background-color: coral;left: 40px;top: 40px;
+    position: absolute;}
 #n5{
-    background-color: mediumaquamarine;
-}
+    background-color: mediumaquamarine;left: 50px;top: 50px;
+    position: absolute;}
 #n6{
-    background-color: aqua;
+    background-color: aqua;position: absolute; left: 60px;top: 60px;
 }
 #n7{
     background-color: lawngreen;
-}
+    position: absolute; left: 70px;top: 70px;}
 #n8{
-    background-color: olivedrab;
+    background-color: olivedrab;position: absolute; left: 80px;top: 80px;
 }
 #n9{
     background-color: yellow;
-}
+  }
 #n10{
     background-color: pink;
 }
@@ -77,10 +76,9 @@
 }
 #n12{
     background-color: deeppink;
-}
+ }
 #n13{
-    background-color: mediumpurple;
-}
+    background-color: mediumpurple;}
 #n14{
     background-color: firebrick;
 }
@@ -141,11 +139,6 @@ p {
     border-radius: 20px;
     overflow-x: hidden;
     overflow-y: hidden;
-}
-
-hr {
-    color: #000088;
-    width: 30%;
 }
 
 .red, .green, .blue, .yellow, .maroon, .dark, .white, .darkturquoise, .orange,.pink {
@@ -253,7 +246,7 @@ nav div{
     padding: 3px;
     border-radius: 50px;
     text-align: center;
-    background:-webkit-linear-gradient(top,cornflowerblue,white);
+    background:-webkit-linear-gradient(top, #a9b6ff,white);
     background:-moz-linear-gradient(top,cornflowerblue,white);
     background:-o-linear-gradient(top,cornflowerblue,white);
 
