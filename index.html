@@ -31,52 +31,52 @@
                 $("#show1").show();
             });
             //color_change
-            $("#n1").click(function(){
+            $("#n1").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "azure");
             });
-            $("#n2").click(function(){
+            $("#n2").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "moccasin");
             });
-            $("#n3").click(function(){
+            $("#n3").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "darkorange ");
             });
-            $("#n4").click(function(){
+            $("#n4").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "coral ");
             });
-            $("#n5").click(function(){
+            $("#n5").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "mediumaquamarine");
             });
-            $("#n6").click(function(){
+            $("#n6").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "aqua");
             });
-            $("#n7").click(function(){
+            $("#n7").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "lawngreen");
             });
-            $("#n8").click(function(){
+            $("#n8").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "olivedrab");
             });
-            $("#n9").click(function(){
+            $("#n9").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "yellow");
             });
-            $("#n10").click(function(){
+            $("#n10").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "pink");
             });
-            $("#n11").click(function(){
+            $("#n11").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "purple ");
             });
-            $("#n12").click(function(){
+            $("#n12").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "deeppink ");
             });
-            $("#n13").click(function(){
+            $("#n13").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "mediumpurple");
             });
-            $("#n14").click(function(){
+            $("#n14").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "firebrick");
             });
-            $("#n15").click(function(){
+            $("#n15").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "navy");
             });
-            $("#n16").click(function(){
+            $("#n16").click(function () {
                 $("p,article:nth-child(5),article:nth-child(6),fieldset legend,h2,table:not(thead),label,h1").css("background-color", "dimgray");
             });
         });
@@ -86,8 +86,22 @@
 <body>
 <div id="n0">
     <div id="title">Вибери свій стиль !</div>
-    <div id="n1"></div>     <div id="n2"></div>     <div id="n3"></div>     <div id="n4"></div>     <div id="n5"></div>     <div id="n6"></div>    <div id="n7"></div>     <div id="n8"></div>
-    <div id="n9"></div>    <div id="n10"></div>    <div id="n11"></div>    <div id="n12"></div>    <div id="n13"></div>    <div id="n14"></div>    <div id="n15"></div>    <div id="n16"></div>
+    <div id="n1"></div>
+    <div id="n2"></div>
+    <div id="n3"></div>
+    <div id="n4"></div>
+    <div id="n5"></div>
+    <div id="n6"></div>
+    <div id="n7"></div>
+    <div id="n8"></div>
+    <div id="n9"></div>
+    <div id="n10"></div>
+    <div id="n11"></div>
+    <div id="n12"></div>
+    <div id="n13"></div>
+    <div id="n14"></div>
+    <div id="n15"></div>
+    <div id="n16"></div>
 </div>
 <h1 align="center">
     <span><b><em>ПОРТФОЛІО</em></b></span><br>
@@ -104,7 +118,7 @@
     var ctx = canvas.getContext("2d");
     var radius = canvas.height / 2;
     ctx.translate(radius, radius);
-    radius = radius * 0.85
+    radius = radius * 0.85;
     setInterval(drawClock, 1000);
 
     function drawClock() {
@@ -182,7 +196,6 @@
 </script>
 <!--Годинник-->
 
-
 <article style="width:330px; float: left; margin-left: 170px;">
     <ul>
         <li>Особисті якості
@@ -216,7 +229,9 @@
 
 <nav>
     <a href="#link1">
-        <div><b>HTML</b> мова розмітки</div>
+        <div>
+            <b>HTML</b> мова розмітки>
+        </div>
     </a>
     <a href="#link11">
         <div>Мета та завдання мови <b>НТМL</b></div>
@@ -253,7 +268,9 @@
 </p>
 
 
-<div id="link11">Мета та завдання мови НТМL</div>
+<div id="link11">
+    Мета та завдання мови НТМL
+</div>
 <hr align="left">
 
 <p>
@@ -301,7 +318,7 @@
 
 <!--<caption> Table</caption> -->
 <table border="2" cellpadding="7" cellspacing="0" width="940px">
-    <thead width="50px" bgcolor="#D3EDF6">
+    <thead width="50px" background="silver">
     <tr>
         <td>Рівень</td>
         <td>Країна</td>
@@ -335,13 +352,13 @@
 <h2 style="width: 100px;"><b>Форми</b></h2>
 <footer style="margin-bottom: 20px">
     <form target=“_blank” action="handler.php">
-
+        <progress value="25" max="100"></progress>
+        <!-- Календар -->
+        <input type="week"/>
         <fieldset>
             <legend>Дані користувача</legend>
             <label for="email">Email:</label>
             <input type="email" id="email" placeholder="Enter email"/> <br>
-
-
             <label for="pwd">Password:</label>
             <input type="password" id="pwd" placeholder="Enter password"><br>
             <button formaction="handler.php">Відправити</button>
