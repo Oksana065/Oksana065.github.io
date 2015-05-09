@@ -42,28 +42,28 @@
     }
 
 #n1{
-    background-color: azure; position: absolute; left: 10px;top: 10px;
+    background-color: azure;
 }
 #n2{
-    background-color: moccasin;left: 20px;top: 20px;
-    position: absolute;}
+    background-color: moccasin;
+    }
 #n3{
-    background-color: darkorange ;left: 30px;top: 30px;
-    position: absolute;}
+    background-color: darkorange ;
+    }
 #n4{
-    background-color: coral;left: 40px;top: 40px;
-    position: absolute;}
+    background-color: coral;
+    }
 #n5{
-    background-color: mediumaquamarine;left: 50px;top: 50px;
-    position: absolute;}
+    background-color: mediumaquamarine;
+    }
 #n6{
-    background-color: aqua;position: absolute; left: 60px;top: 60px;
+    background-color: aqua;
 }
 #n7{
     background-color: lawngreen;
-    position: absolute; left: 70px;top: 70px;}
+    }
 #n8{
-    background-color: olivedrab;position: absolute; left: 80px;top: 80px;
+    background-color: olivedrab;
 }
 #n9{
     background-color: yellow;
